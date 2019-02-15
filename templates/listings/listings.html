@@ -36,8 +36,8 @@
       <section id="listings" class="py-4">
         <div class="container">
           <div class="row">
-            {% if listing %}
-              {% for lists in listing %}
+            {% if listings %}
+              {% for lists in listings %}
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card listing-preview">
                       <img class="card-img-top" src="{{ lists.photo_main.url }}" alt="">
@@ -91,11 +91,11 @@
           <div class="row">
             <div class="col-md-12">
 
-              {% if listing.has_other_pages %}
+              {% if listings.has_other_pages %}
                 <ul class="pagination">
-                  {% if listing.has_previous %}
+                  {% if listings.has_previous %}
                     <li class="page-item">
-                      <a class="page-link" href="?pages={{ listing.previous_page_number }}">&laquo;</a>
+                      <a class="page-link" href="?pages={{ listings.previous_page_number }}">&laquo;</a>
                     </li>
 
                   {% else %}
@@ -103,7 +103,7 @@
                         <a class="page-link">&laquo;</a>
                     </li> 
                   {% endif %}
-                  {% for i in listing.paginator.page_range %}
+                  {% for i in listings.paginator.page_range %}
                     {% if listing.number == i %}
                       <li class="page-item active">
                         <a class="page-link">{{i}}</a>
@@ -114,9 +114,9 @@
                       </li>
                     {% endif %}
                   {% endfor %}
-                  {% if listing.has_next %}
+                  {% if listings.has_next %}
                     <li class="page-item">
-                      <a class="page-link" href="?pages={{ listing.next_page_number }}">&raquo;</a>
+                      <a class="page-link" href="?pages={{ listings.next_page_number }}">&raquo;</a>
                     </li>
 
                   {% else %}
