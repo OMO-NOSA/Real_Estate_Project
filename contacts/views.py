@@ -30,7 +30,7 @@ def contact(request):
             'Property Listing Inquiry',
             'There has been an inquiry for ' +listing + '.Sign into the admin panel for more',
             'nosdgenius@gmial.com',
-            [realtor_email, 'omorodion.nosa@yahoo.com'],
+            [realtor_email, 'hero@yahoo.com'],
             fail_silently=False
         )
         messages.success(request, 'Your request has been submitted, a realtor will contact you soon.')
